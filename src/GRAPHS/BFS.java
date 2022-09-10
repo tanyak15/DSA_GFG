@@ -25,6 +25,7 @@ public class BFS {
             }
         }
     }
+
     public static void main(String[] args) {
         int V = 6;
         ArrayList<ArrayList<Integer> > adj = new ArrayList<ArrayList<Integer>>(V);

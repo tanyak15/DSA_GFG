@@ -54,16 +54,29 @@ public class Main {
     //************************************************************************************************************//
 
     static void solve() {
+        String s =sc.next();
 
+        int count = 1;
+        int max = 0;
+        for(int i=0;i<s.length()-1 ;i++){
+            if(s.charAt(i) != s.charAt(i+1)){
+                count = 1;
+            }
+            else{
+                count++;
+            }
+            max = Math.max( count ,max);
+        }
+        System.out.println(max);
 
     }
 
     //************************************************************************************************************//
     public static void main(String[] args) throws java.lang.Exception {
-        long testCase = sc.nextLong();
-        for (long i = 0; i < testCase; i++) {
+//        long testCase = sc.nextLong();
+//        for (long i = 0; i < testCase; i++) {
             solve();
-        }
+//        }
     }
 }
 

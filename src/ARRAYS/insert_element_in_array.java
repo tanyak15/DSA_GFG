@@ -1,13 +1,7 @@
 package ARRAYS;
 
 public class insert_element_in_array {
-    static Integer sum(Integer a ,Integer b){
-        a=20;
-        b=10;
-        System.out.println();
-        System.out.print(a+" "+b);
-        return a+b;
-    }
+
     static public void insertAtIndex(int arr[],int sizeOfArray,int index,int element)
     {
 //        step1:right shifting the elements
@@ -29,8 +23,5 @@ public class insert_element_in_array {
         Integer a1 = 2;
         Integer b1 = 6;
 
-        sum(a1,b1);
-        System.out.println();
-        System.out.println("printing a1 b1 :" +a1+" "+b1);
     }
 }

@@ -14,7 +14,7 @@ public class detect_cycle_in_an_undirected_graph {
         ArrayList<Integer> adjList = adj.get(s);
         for(int i=0;i<adjList.size();i++){
             int adjVert = adjList.get(i);
-            if (!isVisited[adjVert]){
+            if (!isVisited[adjVert] && DFSRec(adj , adjVert , isVisited , s)){
                 if (DFSRec(adj , adjVert , isVisited , s)){
                     return true;
                 }

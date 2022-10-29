@@ -7,9 +7,7 @@ import java.util.Queue;
 public class topological_sorting {
 
     static void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
-
         adj.get(u).add(v);
-
     }
 
     static void topSort(ArrayList<ArrayList<Integer>> adj, int v) {
@@ -53,6 +51,35 @@ public class topological_sorting {
 
 
     }
+//    **************************************************************************************************
+//    prac -1
+//    static void topSort(ArrayList<ArrayList<Integer>> adj , int v){
+//        int[] inDegree = new int[v];
+//
+////        to find the indegree
+//        for (int i=0;i<v;i++){
+//            for (int u1 : adj.get(i)){
+//                inDegree[u1]++;
+//            }
+//        }
+//
+//        Queue<Integer> q = new LinkedList<>();
+//        for (int i=0;i<v;i++){
+//            if (inDegree[i] == 0){
+//                q.add(i);
+//            }
+//        }
+//        while (!q.isEmpty()){
+//            int curr = q.poll();
+//            System.out.print(curr+" ");
+//            for (int u : adj.get(curr)){
+//                inDegree[u]--;
+//                if (inDegree[u] == 0){
+//                    q.add(u);
+//                }
+//            }
+//        }
+//    }
 
     public static void main(String[] args) {
         int V = 5;

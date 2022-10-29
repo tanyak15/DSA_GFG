@@ -2,6 +2,26 @@ package Competitive_programming;
 
 import java.util.*;
 import java.lang.*;
+import java.io.*;
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode() {
+    }
+
+    TreeNode(int val) {
+        this.val = val;
+    }
+
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
 
 /* Name of the class has to be "Main" only if the class is public. */
 public class Main {
@@ -52,33 +72,54 @@ public class Main {
     }
 
     //************************************************************************************************************//
-
-    static void solve() {
-        String s =sc.next();
-
-        int count = 1;
-        int max = 0;
-        for(int i=0;i<s.length()-1 ;i++){
-            if(s.charAt(i) != s.charAt(i+1)){
-                count = 1;
-            }
-            else{
-                count++;
-            }
-            max = Math.max( count ,max);
+    static int fib(int N){
+        if(N!=0 && N%5 == 0){
+            return 11;
         }
-        System.out.println(max);
+        if(N==0 || N==1){
+            return N;
+        }
+            return fib(N - 1) + fib(N - 2);
 
     }
+    static int findNth(int n){
+        int arr[] = new int[100000];
+        for(int i=0;i<=n;i++){
+            arr[i] = (int) (fib(n) % (Math.pow(10,9)+7));
+        }
+        return (int)arr[n];
+
+    }
+
 
     //************************************************************************************************************//
     public static void main(String[] args) throws java.lang.Exception {
 //        long testCase = sc.nextLong();
 //        for (long i = 0; i < testCase; i++) {
-            solve();
+//        int arr[] = {1, 2, 3};
+//        System.out.println(plusOne(arr));
+        findNth(2);
+        System.out.println(findNth(6));
 //        }
     }
 }
 
 
+//    static int[] plusOne(int[] digits) {
+//        int Cnum =0;
+//        int[] arr = new int[digits.length+1];
 //
+//        for(int i=0;i<digits.length-1; i++){
+//            Cnum += digits[i]*Math.pow(10,digits.length-i-1);
+//        }
+//        int resNum = Cnum+1;
+//
+//        int j=0;
+//        while(resNum>0){
+//            int rem = resNum%10;
+//            arr[j] = rem;
+//            j++;
+//            resNum /= 10;
+//        }
+//        return arr;
+//    }
